@@ -106,6 +106,11 @@
     transform: translateY(-4px);
     box-shadow: 0 20px 60px rgba(10,10,40,0.10);
   }
+  .tier-3-badge {
+    background: var(--gold) !important;
+    color: var(--ink) !important;
+    display: block !important;
+  }
   .package.featured {
     border-color: var(--accent);
     box-shadow: 0 8px 40px rgba(26,75,247,0.12);
@@ -137,6 +142,29 @@
     margin-bottom: 6px;
     line-height: 1.2;
   }
+  .item-price {
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+  .tier-1 .item-price { color: var(--green); }
+  .tier-2 .item-price { color: var(--accent); }
+  .tier-3 .item-price { color: var(--gold); }
+
+  .package .price {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .tier-1 .price { color: var(--green); }
+  .tier-2 .price { color: var(--accent); }
+  .tier-3 .price { color: var(--gold); }
+
   .package .tagline {
     font-size: 13px;
     color: var(--mid);
@@ -387,6 +415,16 @@
     color: var(--ink);
     margin-bottom: 4px;
   }
+  .r-price-total {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .r-essential .r-price-total { color: var(--green); }
+  .r-growth .r-price-total { color: var(--accent); }
+  .r-partner .r-price-total { color: var(--gold); }
+
   .r-header .r-sub {
     font-size: 12px;
     color: var(--mid);
@@ -417,6 +455,19 @@
   .r-essential .ri-dot { background: var(--green); }
   .r-growth .ri-dot { background: var(--accent); }
   .r-partner .ri-dot { background: var(--gold); }
+
+  .r-item .r-price {
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+  .r-essential .r-price { color: var(--green); }
+  .r-growth .r-price { color: var(--accent); }
+  .r-partner .r-price { color: var(--gold); }
 
   .r-item .r-item-note {
     font-size: 11px;
@@ -517,7 +568,7 @@
 <body>
 
 <div class="hero">
-  <div class="hero-label">For Internal Use — Agency Planning Document</div>
+  <div class="hero-label">Prepared exclusively for Aluzie Limited</div>
   <h1>Aluzie Limited<br><span>Service Packages</span></h1>
   <p>Three tiered options built around where Aluzie is today — a technically credible, category-defining product that needs to look and sound the part.</p>
 </div>
@@ -533,25 +584,26 @@
     <div class="package-header">
       <div class="tier-label">Tier 1</div>
       <h2>Foundation</h2>
+      <div class="price">£7,450 – £9,150</div>
       <div class="tagline">"Get the essentials right before anything else."</div>
       <div class="description">For a startup that needs a credible, coherent presence quickly. Everything here is the minimum viable communications kit for Aluzie to walk into a client or investor meeting with confidence.</div>
     </div>
     <div class="package-services">
       <div class="service-category">
         <div class="cat-label">Verbal Identity & Messaging</div>
-        <div class="service-item"><span class="dot"></span><div>Tone of voice guidelines<span class="note">Voice, language principles, what to avoid</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Core messaging framework<span class="note">Proposition, value statements by audience, proof points</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Copywriting — landing page<span class="note">Full copy for revised single-page site</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Strapline creation<span class="note">5 strapline options</span></div><span class="item-price">£1,000</span></div>
+        <div class="service-item"><span class="dot"></span><div>Core messaging framework<span class="note">Brand vision, mission, values, proposition and proof points</span></div><span class="item-price">£1,500</span></div>
+        <div class="service-item"><span class="dot"></span><div>LinkedIn bio &amp; company overview<span class="note">Concise summary balancing industry confidence and human touch</span></div><span class="item-price">£250</span></div>
+        <div class="service-item"><span class="dot"></span><div>Copywriting — landing page or website<span class="note">Landing page amends (£500 discovery + £1,500) or 5-page website copy</span></div><span class="item-price">£2,000 – £2,500</span></div>
       </div>
       <div class="service-category">
         <div class="cat-label">Web</div>
-        <div class="service-item"><span class="dot"></span><div>Website design & build<span class="note">Refreshed landing page, working within existing brand</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>User experience design<span class="note">Logical structure, clear calls to action</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Landing page design &amp; build<span class="note">Refreshed landing page, working within existing brand</span></div><span class="item-price">£2,000 – £3,000</span></div>
+        <div class="service-item"><span class="dot"></span><div>User experience design<span class="note">Logical structure, clear calls to action</span></div><span class="item-price">Included</span></div>
       </div>
       <div class="service-category">
         <div class="cat-label">Print & Digital Essentials</div>
-        <div class="service-item"><span class="dot"></span><div>Stationery design<span class="note">Email signature, letterhead, business card</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Company overview one-pager<span class="note">PDF leave-behind for client & investor meetings</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Stationery design<span class="note">Email signature, letterhead, business card</span></div><span class="item-price">£300 – £500</span></div>
       </div>
     </div>
     <div class="package-outcome">
@@ -570,6 +622,7 @@
     <div class="package-header">
       <div class="tier-label">Tier 2</div>
       <h2>Credibility &amp; Presence</h2>
+      <div class="price">£23,600 – £32,300</div>
       <div class="tagline">"Everything in Tier 1, plus a voice in the market."</div>
       <div class="description">The right package for a B2B tech startup trying to establish authority and attract the right people. Adds thought leadership, social presence, and a proper document design system to the foundations.</div>
     </div>
@@ -579,20 +632,17 @@
       </div>
       <div class="service-category">
         <div class="cat-label">Content & Social</div>
-        <div class="service-item"><span class="dot"></span><div>Social media marketing strategy<span class="note">LinkedIn content pillars, posting cadence, profile optimisation</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>LinkedIn post pack (×10)<span class="note">Ready-to-publish, founder-voice and company page mix</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Thought leadership articles (×3)<span class="note">600–900 word articles for LinkedIn or website blog</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Editorial — LinkedIn profile copy<span class="note">Optimised bios for key founders/team members</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Tone of voice guidelines<span class="note">Brand persona, language principles, tone of voice in action</span></div><span class="item-price">£2,000</span></div>
+        <div class="service-item"><span class="dot"></span><div>Marketing strategy<span class="note">LinkedIn content pillars, posting cadence, profile optimisation</span></div><span class="item-price">£4,000</span></div>
+        <div class="service-item"><span class="dot"></span><div>Social post design templates<span class="note">One-off branded template set</span></div><span class="item-price">£1,000</span></div>
       </div>
       <div class="service-category">
         <div class="cat-label">Document Design System</div>
-        <div class="service-item"><span class="dot"></span><div>Publication design — branded Word template<span class="note">For reports, briefings, proposals</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Digital presentation template<span class="note">Branded PowerPoint/Keynote deck template</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Photography & imagery direction<span class="note">Art direction guidelines for stock imagery selection; visual tone</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Brand guidelines &amp; photography direction<span class="note">Art direction guidelines for stock imagery selection; visual tone</span></div><span class="item-price">£500</span></div>
       </div>
       <div class="service-category">
-        <div class="cat-label">User Experience</div>
-        <div class="service-item"><span class="dot"></span><div>User interface design review<span class="note">UX/UI sense-check across all digital touchpoints for consistency</span></div></div>
+        <div class="cat-label">Website</div>
+        <div class="service-item"><span class="dot"></span><div>Full website design &amp; build<span class="note">Multi-page site with UX design included</span></div><span class="item-price">£7,000 – £10,000</span></div>
       </div>
     </div>
     <div class="package-outcome">
@@ -607,6 +657,7 @@
 
   <!-- TIER 3 -->
   <div class="package tier-3">
+    <div class="featured-badge tier-3-badge">When You're Ready</div>
     <div class="package-header">
       <div class="tier-label">Tier 3</div>
       <h2>Market Leadership</h2>
@@ -618,20 +669,20 @@
         <div class="cat-label">Everything in Tiers 1 & 2, plus:</div>
       </div>
       <div class="service-category">
-        <div class="cat-label">Advertising & Campaigns</div>
-        <div class="service-item"><span class="dot"></span><div>Advertising — LinkedIn campaign creative<span class="note">Sponsored content, thought leadership ads, InMail templates</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Marketing literature — sales collateral pack<span class="note">Capability deck, solution overview sheets (×2), case study template</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Editorial — long-form content retainer<span class="note">Monthly article + 4 posts ongoing; positions Aluzie as a category voice</span></div></div>
+        <div class="cat-label">Strategy & Campaigns</div>
+        <div class="service-item"><span class="dot"></span><div>Marketing strategy<span class="note">Full go-to-market strategy and campaign planning</span></div><span class="item-price">£3,600</span></div>
+        <div class="service-item"><span class="dot"></span><div>Advertising — LinkedIn campaign creative<span class="note">Sponsored content, thought leadership ads, InMail templates</span></div><span class="item-price">TBC</span></div>
+        <div class="service-item"><span class="dot"></span><div>Marketing literature — sales collateral pack<span class="note">Capability deck, solution overview sheets (×2), case study template</span></div><span class="item-price">£1,500</span></div>
       </div>
       <div class="service-category">
         <div class="cat-label">Exhibitions & Events</div>
-        <div class="service-item"><span class="dot"></span><div>Exhibition design concept<span class="note">Stand/booth design concept for industry events; rollup banners</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Wayfinding & event materials<span class="note">Branded event collateral — name badges, printed materials</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Exhibition design concept<span class="note">Stand/booth design concept for industry events; rollup banners</span></div><span class="item-price">POA</span></div>
+        <div class="service-item"><span class="dot"></span><div>Wayfinding &amp; event materials<span class="note">Branded event collateral — name badges, printed materials</span></div><span class="item-price">POA</span></div>
       </div>
       <div class="service-category">
         <div class="cat-label">Extended Digital</div>
-        <div class="service-item"><span class="dot"></span><div>Website expansion — 3 additional pages<span class="note">Use cases, about/team, resources/blog section</span></div></div>
-        <div class="service-item"><span class="dot"></span><div>Photography — brand shoot brief & direction<span class="note">Brief and creative direction for a professional brand photography session</span></div></div>
+        <div class="service-item"><span class="dot"></span><div>Website expansion — 3 additional pages<span class="note">Use cases, about/team, resources/blog section</span></div><span class="item-price">£8,000 – £15,000</span></div>
+        <div class="service-item"><span class="dot"></span><div>Photography — brand shoot brief &amp; direction<span class="note">Brief and creative direction for a professional brand photography session</span></div><span class="item-price">POA</span></div>
       </div>
     </div>
     <div class="package-outcome">
@@ -670,13 +721,16 @@
       <div class="r-header">
         <div class="r-tier-tag"><span class="r-dot"></span>Essentials Retainer</div>
         <h3>Keep the Light On</h3>
+        <div class="r-price-total">£2,300/mo</div>
         <div class="r-sub">"Stay visible without the overhead."</div>
       </div>
       <div class="r-body">
-        <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post pack (×4/month)<span class="r-item-note">Company page and/or founder voice</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>1× short-form editorial piece<span class="r-item-note">300–400 words; LinkedIn article or web update</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Brand guardianship review<span class="r-item-note">Monthly sense-check of any new materials produced in-house</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Minor website copy updates<span class="r-item-note">Up to 1 hour of amends per month</span></div></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Ad hoc design support &amp; brand guardianship<span class="r-item-note">Ongoing sense-check and design assistance to keep everything on-brand</span></div><span class="r-price">£400/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post writing (×4/month)<span class="r-item-note">Company page and/or founder voice; SEO optimised</span></div><span class="r-price">£1,500/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Social post design &amp; scheduling (×4/month)<span class="r-item-note">Designed and scheduled posts to match written content</span></div><span class="r-price">£400/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>1× short-form editorial piece<span class="r-item-note">300–400 words; LinkedIn article or web update</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Brand guardianship review<span class="r-item-note">Monthly sense-check of any new materials produced in-house</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Minor website copy updates<span class="r-item-note">Up to 1 hour of amends per month</span></div><span class="r-price">Included</span></div>
       </div>
       <div class="r-cadence">
         <div class="r-cadence-item"><span class="c-label">Cadence</span><span class="c-val">Monthly</span></div>
@@ -693,15 +747,17 @@
       <div class="r-header">
         <div class="r-tier-tag"><span class="r-dot"></span>★ Growth Retainer</div>
         <h3>Build the Category</h3>
+        <div class="r-price-total">£3,650/mo</div>
         <div class="r-sub">"A consistent voice that compounds over time."</div>
       </div>
       <div class="r-body">
-        <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post pack (×8–10/month)<span class="r-item-note">Mix of company page and founder voice posts</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>1× long-form thought leadership article<span class="r-item-note">600–900 words; on agreed topic; 1 round of amends</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Monthly messaging refresh<span class="r-item-note">Evolving key messages as the product and market develops</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Brand guardianship — full review<span class="r-item-note">All new materials reviewed for tone and consistency</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Website copy updates<span class="r-item-note">Up to 2 hours of amends or new content per month</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Quarterly content & strategy review<span class="r-item-note">60-min call to assess what's working and adjust direction</span></div></div>
+        <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post writing (×8–10/month)<span class="r-item-note">Mix of company page and founder voice posts; SEO optimised</span></div><span class="r-price">£3,000/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Social post design &amp; scheduling (×8/month)<span class="r-item-note">Designed and scheduled posts to match written content</span></div><span class="r-price">£650/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>1× long-form thought leadership article<span class="r-item-note">600–900 words; on agreed topic; 1 round of amends</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Monthly messaging refresh<span class="r-item-note">Evolving key messages as the product and market develops</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Brand guardianship — full review<span class="r-item-note">All new materials reviewed for tone and consistency</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Website copy updates<span class="r-item-note">Up to 2 hours of amends or new content per month</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Quarterly content &amp; strategy review<span class="r-item-note">60-min call to assess what's working and adjust direction</span></div><span class="r-price">Included</span></div>
       </div>
       <div class="r-cadence">
         <div class="r-cadence-item"><span class="c-label">Cadence</span><span class="c-val">Monthly</span></div>
@@ -718,15 +774,17 @@
       <div class="r-header">
         <div class="r-tier-tag"><span class="r-dot"></span>Partner Retainer</div>
         <h3>Full Partner</h3>
+        <div class="r-price-total">£4,550/mo + ads</div>
         <div class="r-sub">"Your agency on call — across every channel."</div>
       </div>
       <div class="r-body">
-        <div class="r-item"><span class="ri-dot"></span><div>Everything in the Growth retainer<span class="r-item-note">Full content and brand guardianship programme</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Advertising creative — LinkedIn (×2/month)<span class="r-item-note">Paid social ad creative and copy; A/B variants</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Sales & marketing collateral updates<span class="r-item-note">Ongoing amends to pitch decks, one-pagers, case studies</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Campaign concepting & planning<span class="r-item-note">Quarterly campaign ideas aligned to business milestones</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Priority turnaround<span class="r-item-note">48-hour response on ad hoc requests; named account team</span></div></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Annual brand health review<span class="r-item-note">Full audit of all communications; strategic recommendations</span></div></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Everything in the Growth retainer<span class="r-item-note">Full content, social writing, design and brand guardianship programme</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Acquisition &amp; retention emails (×6/month)<span class="r-item-note">3 × to existing contacts + 3 × to new leads</span></div><span class="r-price">£900/mo</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Advertising creative — LinkedIn (×2/month)<span class="r-item-note">Paid social ad creative and copy; A/B variants</span></div><span class="r-price">TBC</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Sales &amp; marketing collateral updates<span class="r-item-note">Ongoing amends to pitch decks, one-pagers, case studies</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Campaign concepting &amp; planning<span class="r-item-note">Quarterly campaign ideas aligned to business milestones</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Priority turnaround<span class="r-item-note">48-hour response on ad hoc requests; named account team</span></div><span class="r-price">Included</span></div>
+        <div class="r-item"><span class="ri-dot"></span><div>Annual brand health review<span class="r-item-note">Full audit of all communications; strategic recommendations</span></div><span class="r-price">Included</span></div>
       </div>
       <div class="r-cadence">
         <div class="r-cadence-item"><span class="c-label">Cadence</span><span class="c-val">Monthly</span></div>
