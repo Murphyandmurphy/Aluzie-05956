@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,721 +9,724 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --ink: #0D0D1A;
-    --ink-mid: #2A2A42;
-    --accent: #1A4BF7;
-    --accent-light: #E8EFFE;
-    --accent-mid: #3D5FFF;
-    
-    --gold: #C9A84C;
-    --gold-light: #FDF6E7;
-    --green: #1A7A5E;
-    --green-light: #E6F5F0;
-    --warm: #F7F5F0;
-    --mid: #6B6B8A;
-    --border: rgba(10,10,40,0.10);
-    --white: #FFFFFF;
-  }
+:root {
+–ink: #0D0D1A;
+–ink-mid: #2A2A42;
+–accent: #1A4BF7;
+–accent-light: #E8EFFE;
+–accent-mid: #3D5FFF;
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm);
-    color: var(--ink);
-    min-height: 100vh;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
+```
+--gold: #C9A84C;
+--gold-light: #FDF6E7;
+--green: #1A7A5E;
+--green-light: #E6F5F0;
+--warm: #F7F5F0;
+--mid: #6B6B8A;
+--border: rgba(10,10,40,0.10);
+--white: #FFFFFF;
+```
 
-  .page-content {
-    flex: 1;
-  }
-    background: var(--ink);
-    padding: 20px 48px;
-  }
-  .page-logo {
-    width: 214px;
-    opacity: 0.85;
-    display: block;
-  }
-  .hero {
-    background: var(--ink);
-    padding: 64px 48px 56px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(26,75,247,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 20px;
-  }
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 16px;
-    max-width: 640px;
-  }
-  .hero h1 span { color: var(--accent); }
-  .hero p {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.6);
-    max-width: 520px;
-    line-height: 1.7;
-  }
+}
 
-  /* INTRO */
-  .intro {
-    padding: 48px 48px 0;
-    max-width: 760px;
-  }
-  .intro p {
-    font-size: 15px;
-    color: var(--mid);
-    line-height: 1.75;
-    font-weight: 300;
-  }
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–warm);
+color: var(–ink);
+min-height: 100vh;
+padding: 0;
+display: flex;
+flex-direction: column;
+}
 
-  /* PACKAGES GRID */
-  .packages {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 40px 48px 64px;
-    align-items: stretch;
-    max-width: 680px;
-  }
-  .proposal-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    padding: 40px 48px 64px;
-    align-items: stretch;
-  }
+.page-content {
+flex: 1;
+}
+background: var(–ink);
+padding: 20px 48px;
+}
+.page-logo {
+width: 214px;
+opacity: 0.85;
+display: block;
+}
+.hero {
+background: var(–ink);
+padding: 64px 48px 56px;
+position: relative;
+overflow: hidden;
+}
+.hero::before {
+content: ‘’;
+position: absolute;
+top: -80px; right: -80px;
+width: 400px; height: 400px;
+background: radial-gradient(circle, rgba(26,75,247,0.18) 0%, transparent 70%);
+border-radius: 50%;
+}
+.hero-label {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 20px;
+}
+.hero h1 {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(32px, 5vw, 52px);
+font-weight: 800;
+color: var(–white);
+line-height: 1.1;
+margin-bottom: 16px;
+max-width: 640px;
+}
+.hero h1 span { color: var(–accent); }
+.hero p {
+font-size: 15px;
+font-weight: 300;
+color: rgba(255,255,255,0.6);
+max-width: 520px;
+line-height: 1.7;
+}
 
-  .package {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1.5px solid var(--border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .package:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(10,10,40,0.10);
-  }
-  .tier-3-badge {
-    background: var(--gold) !important;
-    color: var(--ink) !important;
-    display: block !important;
-  }
-  .package.featured {
-    border-color: var(--accent);
-    box-shadow: 0 8px 40px rgba(26,75,247,0.12);
-  }
+/* INTRO */
+.intro {
+padding: 48px 48px 0;
+max-width: 760px;
+}
+.intro p {
+font-size: 15px;
+color: var(–mid);
+line-height: 1.75;
+font-weight: 300;
+}
 
-  .package-header {
-    padding: 28px 28px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .tier-label {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-  }
-  .tier-1 .tier-label { background: var(--green-light); color: var(--green); }
-  .tier-2 .tier-label { background: var(--accent-light); color: var(--accent); }
-  .tier-3 .tier-label { background: var(--gold-light); color: var(--gold); }
+/* PACKAGES GRID */
+.packages {
+display: grid;
+grid-template-columns: 1fr;
+gap: 24px;
+padding: 40px 48px 64px;
+align-items: stretch;
+max-width: 680px;
+}
+.proposal-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+padding: 40px 48px 64px;
+align-items: stretch;
+}
 
-  .package h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
-  .item-price {
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-left: auto;
-    padding-left: 10px;
-    padding-top: 3px;
-    flex-shrink: 0;
-  }
-  .tier-1 .item-price { color: var(--green); }
-  .tier-2 .item-price { color: var(--accent); }
-  .tier-3 .item-price { color: var(--gold); }
+.package {
+background: var(–white);
+border-radius: 16px;
+overflow: hidden;
+border: 1.5px solid var(–border);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.package:hover {
+transform: translateY(-4px);
+box-shadow: 0 20px 60px rgba(10,10,40,0.10);
+}
+.tier-3-badge {
+background: var(–gold) !important;
+color: var(–ink) !important;
+display: block !important;
+}
+.package.featured {
+border-color: var(–accent);
+box-shadow: 0 8px 40px rgba(26,75,247,0.12);
+}
 
-  .package .price {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .tier-1 .price { color: var(--green); }
-  .tier-2 .price { color: var(--accent); }
-  .tier-3 .price { color: var(--gold); }
+.package-header {
+padding: 28px 28px 24px;
+border-bottom: 1px solid var(–border);
+}
+.tier-label {
+display: inline-block;
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+padding: 4px 10px;
+border-radius: 20px;
+margin-bottom: 14px;
+}
+.tier-1 .tier-label { background: var(–green-light); color: var(–green); }
+.tier-2 .tier-label { background: var(–accent-light); color: var(–accent); }
+.tier-3 .tier-label { background: var(–gold-light); color: var(–gold); }
 
-  .package .tagline {
-    font-size: 13px;
-    color: var(--mid);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 16px;
-  }
-  .package .description {
-    font-size: 13.5px;
-    color: var(--ink-mid);
-    line-height: 1.65;
-    font-weight: 300;
-  }
+.package h2 {
+font-family: ‘Syne’, sans-serif;
+font-size: 22px;
+font-weight: 700;
+color: var(–ink);
+margin-bottom: 6px;
+line-height: 1.2;
+}
+.item-price {
+font-size: 11px;
+font-weight: 600;
+white-space: nowrap;
+margin-left: auto;
+padding-left: 10px;
+padding-top: 3px;
+flex-shrink: 0;
+}
+.tier-1 .item-price { color: var(–green); }
+.tier-2 .item-price { color: var(–accent); }
+.tier-3 .item-price { color: var(–gold); }
 
-  /* FEATURED BADGE */
-  .featured-badge {
-    display: none;
-    background: var(--accent);
-    color: white;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    text-align: center;
-  }
-  .package.featured .featured-badge { display: block; }
+.package .price {
+font-family: ‘Syne’, sans-serif;
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+.tier-1 .price { color: var(–green); }
+.tier-2 .price { color: var(–accent); }
+.tier-3 .price { color: var(–gold); }
 
-  /* SERVICES */
-  .package-services {
-    padding: 24px 28px;
-    border-bottom: 1px solid var(--border);
-  }
-  .service-category {
-    margin-bottom: 20px;
-  }
-  .service-category:last-child { margin-bottom: 0; }
+.package .tagline {
+font-size: 13px;
+color: var(–mid);
+font-weight: 300;
+font-style: italic;
+line-height: 1.5;
+margin-bottom: 16px;
+}
+.package .description {
+font-size: 13.5px;
+color: var(–ink-mid);
+line-height: 1.65;
+font-weight: 300;
+}
 
-  .cat-label.cat-label-everything {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--ink-mid);
-    border-bottom: none;
-    margin-bottom: 12px;
-  }
-  .tier-2 .cat-label-everything { color: var(--accent); }
-  .tier-3 .cat-label-everything { color: var(--gold); }
-  .cat-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
-  }
+/* FEATURED BADGE */
+.featured-badge {
+display: none;
+background: var(–accent);
+color: white;
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+padding: 6px 14px;
+text-align: center;
+}
+.package.featured .featured-badge { display: block; }
 
-  .service-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 6px 0;
-    font-size: 13px;
-    color: var(--ink);
-    line-height: 1.4;
-    font-weight: 400;
-  }
-  .service-item .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-  .tier-1 .dot { background: var(--green); }
-  .tier-2 .dot { background: var(--accent); }
-  .tier-3 .dot { background: var(--gold); }
+/* SERVICES */
+.package-services {
+padding: 24px 28px;
+border-bottom: 1px solid var(–border);
+}
+.service-category {
+margin-bottom: 20px;
+}
+.service-category:last-child { margin-bottom: 0; }
 
-  .service-sub-heading {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--mid);
-    margin: 10px 0 4px 16px;
-  }
-  .service-item-sub {
-    padding-left: 16px;
-  }
-  .service-item-sub .dot {
-    width: 4px;
-    height: 4px;
-    opacity: 0.4;
-  }
-  .service-item .note {
-    font-size: 11px;
-    color: var(--mid);
-    display: block;
-    font-weight: 300;
-    margin-top: 1px;
-  }
+.cat-label.cat-label-everything {
+font-size: 12px;
+font-weight: 700;
+color: var(–ink-mid);
+border-bottom: none;
+margin-bottom: 12px;
+}
+.tier-2 .cat-label-everything { color: var(–accent); }
+.tier-3 .cat-label-everything { color: var(–gold); }
+.cat-label {
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–mid);
+margin-bottom: 8px;
+padding-bottom: 6px;
+border-bottom: 1px solid var(–border);
+}
 
-  /* OUTCOME */
-  .package-outcome {
-    padding: 20px 28px;
-    border-bottom: 1px solid var(--border);
-  }
-  .outcome-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 8px;
-  }
-  .outcome-text {
-    font-size: 13px;
-    color: var(--ink-mid);
-    line-height: 1.6;
-    font-weight: 300;
-    font-style: italic;
-  }
+.service-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 6px 0;
+font-size: 13px;
+color: var(–ink);
+line-height: 1.4;
+font-weight: 400;
+}
+.service-item .dot {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+flex-shrink: 0;
+margin-top: 5px;
+}
+.tier-1 .dot { background: var(–green); }
+.tier-2 .dot { background: var(–accent); }
+.tier-3 .dot { background: var(–gold); }
 
-  /* FOOTER */
-  .package-footer {
-    padding: 20px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .ideal-for {
-    font-size: 12px;
-    color: var(--mid);
-    font-weight: 300;
-  }
-  .ideal-for strong {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mid);
-    font-weight: 500;
-    margin-bottom: 3px;
-  }
+.service-sub-heading {
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: var(–mid);
+margin: 10px 0 4px 16px;
+}
+.service-item-sub {
+padding-left: 16px;
+}
+.service-item-sub .dot {
+width: 4px;
+height: 4px;
+opacity: 0.4;
+}
+.service-item .note {
+font-size: 11px;
+color: var(–mid);
+display: block;
+font-weight: 300;
+margin-top: 1px;
+}
 
-  .cta-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    border: 1.5px solid;
-    transition: all 0.15s ease;
-  }
-  .tier-1 .cta-btn { border-color: var(--green); color: var(--green); }
-  .tier-1 .cta-btn:hover { background: var(--green); color: white; }
-  .tier-2 .cta-btn { background: var(--accent); border-color: var(--accent); color: white; }
-  .tier-2 .cta-btn:hover { background: var(--accent-mid); }
-  .tier-3 .cta-btn { border-color: var(--gold); color: var(--gold); }
-  .tier-3 .cta-btn:hover { background: var(--gold); color: white; }
+/* OUTCOME */
+.package-outcome {
+padding: 20px 28px;
+border-bottom: 1px solid var(–border);
+}
+.outcome-label {
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–mid);
+margin-bottom: 8px;
+}
+.outcome-text {
+font-size: 13px;
+color: var(–ink-mid);
+line-height: 1.6;
+font-weight: 300;
+font-style: italic;
+}
 
-  /* NOTES BAR */
-  .notes-bar {
-    background: var(--ink);
-    padding: 48px 48px 40px;
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-  }
-  .notes-headline {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--white);
-    text-align: left;
-    margin-bottom: 40px;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: 0;
-    margin-right: auto;
-  }
-  .notes-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: end;
-  }
-  .note-block h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-  .note-block p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.65;
-    font-weight: 300;
-  }
-  .note-contact .contact-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .note-contact .contact-detail {
-    font-size: 13px;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 2px;
-  }
-  .note-contact .contact-detail a {
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-  }
-  .note-contact .contact-detail a:hover {
-    color: var(--white);
-  }
-  .note-contact .contact-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.15);
-    margin: 12px 0;
-  }
+/* FOOTER */
+.package-footer {
+padding: 20px 28px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+}
+.ideal-for {
+font-size: 12px;
+color: var(–mid);
+font-weight: 300;
+}
+.ideal-for strong {
+display: block;
+font-size: 11px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–mid);
+font-weight: 500;
+margin-bottom: 3px;
+}
 
-  /* NEXT STEPS */
-  .next-steps-section {
-    background: var(--warm);
-    padding: 56px 48px;
-    border-top: 1.5px solid var(--border);
-  }
-  .next-steps-section .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 8px;
-  }
-  .next-steps-section h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 32px;
-  }
-  .next-steps-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 560px;
-  }
-  .next-step-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .next-step-number {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--green);
-    background: var(--green-light);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .next-step-text {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.5;
-  }
+.cta-btn {
+display: inline-block;
+padding: 8px 16px;
+border-radius: 8px;
+font-size: 12px;
+font-weight: 500;
+text-decoration: none;
+white-space: nowrap;
+cursor: pointer;
+border: 1.5px solid;
+transition: all 0.15s ease;
+}
+.tier-1 .cta-btn { border-color: var(–green); color: var(–green); }
+.tier-1 .cta-btn:hover { background: var(–green); color: white; }
+.tier-2 .cta-btn { background: var(–accent); border-color: var(–accent); color: white; }
+.tier-2 .cta-btn:hover { background: var(–accent-mid); }
+.tier-3 .cta-btn { border-color: var(–gold); color: var(–gold); }
+.tier-3 .cta-btn:hover { background: var(–gold); color: white; }
 
+/* NOTES BAR */
+.notes-bar {
+background: var(–ink);
+padding: 48px 48px 40px;
+width: 100%;
+box-sizing: border-box;
+flex-shrink: 0;
+}
+.notes-headline {
+font-family: ‘Syne’, sans-serif;
+font-size: 18px;
+font-weight: 600;
+color: var(–white);
+text-align: left;
+margin-bottom: 40px;
+opacity: 0.9;
+max-width: 600px;
+margin-left: 0;
+margin-right: auto;
+}
+.notes-columns {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 48px;
+align-items: end;
+}
+.note-block h4 {
+font-family: ‘Syne’, sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(–white);
+margin-bottom: 8px;
+}
+.note-block p {
+font-size: 13px;
+color: rgba(255,255,255,0.5);
+line-height: 1.65;
+font-weight: 300;
+}
+.note-contact .contact-name {
+font-family: ‘Syne’, sans-serif;
+font-size: 15px;
+font-weight: 600;
+color: var(–white);
+margin-bottom: 4px;
+}
+.note-contact .contact-detail {
+font-size: 13px;
+color: rgba(255,255,255,0.65);
+margin-bottom: 2px;
+}
+.note-contact .contact-detail a {
+color: rgba(255,255,255,0.65);
+text-decoration: none;
+}
+.note-contact .contact-detail a:hover {
+color: var(–white);
+}
+.note-contact .contact-divider {
+height: 1px;
+background: rgba(255,255,255,0.15);
+margin: 12px 0;
+}
 
-  .retainer-section {
-    padding: 64px 48px 48px;
-  }
-  .retainer-intro {
-    max-width: 720px;
-    margin-bottom: 40px;
-  }
-  .retainer-intro .section-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
-  }
-  .retainer-intro h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(24px, 3vw, 34px);
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-  .retainer-intro p {
-    font-size: 14.5px;
-    color: var(--mid);
-    line-height: 1.75;
-    font-weight: 300;
-  }
+/* NEXT STEPS */
+.next-steps-section {
+background: var(–warm);
+padding: 56px 48px;
+border-top: 1.5px solid var(–border);
+}
+.next-steps-section .section-label {
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–green);
+margin-bottom: 8px;
+}
+.next-steps-section h2 {
+font-family: ‘Syne’, sans-serif;
+font-size: 28px;
+font-weight: 700;
+color: var(–ink);
+margin-bottom: 32px;
+}
+.next-steps-list {
+display: flex;
+flex-direction: column;
+gap: 16px;
+max-width: 560px;
+}
+.next-step-item {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+.next-step-number {
+font-family: ‘Syne’, sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(–green);
+background: var(–green-light);
+width: 36px;
+height: 36px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
+.next-step-text {
+font-size: 20px;
+font-weight: 500;
+color: var(–ink);
+line-height: 1.5;
+}
 
-  .retainer-section.retainer-inline {
-    padding: 40px 0 64px;
-    display: flex;
-    flex-direction: column;
-  }
-  .retainer-inline .retainer-grid {
-    max-width: none;
-    margin-bottom: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .retainer-inline .retainer-card {
-    flex: 1;
-  }
-  .retainer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-bottom: 32px;
-    max-width: 680px;
-  }
+.retainer-section {
+padding: 64px 48px 48px;
+}
+.retainer-intro {
+max-width: 720px;
+margin-bottom: 40px;
+}
+.retainer-intro .section-label {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 14px;
+}
+.retainer-intro h2 {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(24px, 3vw, 34px);
+font-weight: 800;
+color: var(–ink);
+line-height: 1.15;
+margin-bottom: 16px;
+}
+.retainer-intro p {
+font-size: 14.5px;
+color: var(–mid);
+line-height: 1.75;
+font-weight: 300;
+}
 
-  .retainer-card {
-    background: var(--white);
-    border-radius: 14px;
-    border: 1.5px solid var(--border);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .retainer-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(10,10,40,0.09);
-  }
-  .retainer-card.r-featured {
-    border-color: var(--accent);
-    box-shadow: 0 6px 32px rgba(26,75,247,0.10);
-  }
+.retainer-section.retainer-inline {
+padding: 40px 0 64px;
+display: flex;
+flex-direction: column;
+}
+.retainer-inline .retainer-grid {
+max-width: none;
+margin-bottom: 0;
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+.retainer-inline .retainer-card {
+flex: 1;
+}
+.retainer-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 20px;
+margin-bottom: 32px;
+max-width: 680px;
+}
 
-  .r-header {
-    padding: 22px 24px 18px;
-    border-bottom: 1px solid var(--border);
-  }
-  .r-tier-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .r-tier-tag .r-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-  }
-  .r-essential .r-tier-tag { color: var(--green); }
-  .r-essential .r-dot { background: var(--green); }
-  .r-growth .r-tier-tag { color: var(--accent); }
-  .r-growth .r-dot { background: var(--accent); }
-  .r-partner .r-tier-tag { color: var(--gold); }
-  .r-partner .r-dot { background: var(--gold); }
+.retainer-card {
+background: var(–white);
+border-radius: 14px;
+border: 1.5px solid var(–border);
+overflow: hidden;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.retainer-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 16px 48px rgba(10,10,40,0.09);
+}
+.retainer-card.r-featured {
+border-color: var(–accent);
+box-shadow: 0 6px 32px rgba(26,75,247,0.10);
+}
 
-  .r-header h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-  .r-price-total {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .r-essential .r-price-total { color: var(--green); }
-  .r-growth .r-price-total { color: var(--accent); }
-  .r-partner .r-price-total { color: var(--gold); }
+.r-header {
+padding: 22px 24px 18px;
+border-bottom: 1px solid var(–border);
+}
+.r-tier-tag {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+.r-tier-tag .r-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+}
+.r-essential .r-tier-tag { color: var(–green); }
+.r-essential .r-dot { background: var(–green); }
+.r-growth .r-tier-tag { color: var(–accent); }
+.r-growth .r-dot { background: var(–accent); }
+.r-partner .r-tier-tag { color: var(–gold); }
+.r-partner .r-dot { background: var(–gold); }
 
-  .r-header .r-sub {
-    font-size: 12px;
-    color: var(--mid);
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.45;
-  }
+.r-header h3 {
+font-family: ‘Syne’, sans-serif;
+font-size: 19px;
+font-weight: 700;
+color: var(–ink);
+margin-bottom: 4px;
+}
+.r-price-total {
+font-family: ‘Syne’, sans-serif;
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+.r-essential .r-price-total { color: var(–green); }
+.r-growth .r-price-total { color: var(–accent); }
+.r-partner .r-price-total { color: var(–gold); }
 
-  .r-body {
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .r-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 6px 0;
-    font-size: 13px;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-  .r-item .ri-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 6px;
-  }
-  .r-essential .ri-dot { background: var(--green); }
-  .r-growth .ri-dot { background: var(--accent); }
-  .r-partner .ri-dot { background: var(--gold); }
+.r-header .r-sub {
+font-size: 12px;
+color: var(–mid);
+font-style: italic;
+font-weight: 300;
+line-height: 1.45;
+}
 
-  .r-item .r-price {
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-left: auto;
-    padding-left: 10px;
-    padding-top: 3px;
-    flex-shrink: 0;
-  }
-  .r-essential .r-price { color: var(--green); }
-  .r-growth .r-price { color: var(--accent); }
-  .r-partner .r-price { color: var(--gold); }
+.r-body {
+padding: 20px 24px;
+border-bottom: 1px solid var(–border);
+}
+.r-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 6px 0;
+font-size: 13px;
+color: var(–ink);
+line-height: 1.4;
+}
+.r-item .ri-dot {
+width: 5px; height: 5px;
+border-radius: 50%;
+flex-shrink: 0;
+margin-top: 6px;
+}
+.r-essential .ri-dot { background: var(–green); }
+.r-growth .ri-dot { background: var(–accent); }
+.r-partner .ri-dot { background: var(–gold); }
 
-  .r-item .r-item-note {
-    font-size: 11px;
-    color: var(--mid);
-    display: block;
-    font-weight: 300;
-    margin-top: 1px;
-  }
+.r-item .r-price {
+font-size: 11px;
+font-weight: 600;
+white-space: nowrap;
+margin-left: auto;
+padding-left: 10px;
+padding-top: 3px;
+flex-shrink: 0;
+}
+.r-essential .r-price { color: var(–green); }
+.r-growth .r-price { color: var(–accent); }
+.r-partner .r-price { color: var(–gold); }
 
-  .r-cadence {
-    padding: 14px 24px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 16px;
-  }
-  .r-cadence-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .r-cadence-item .c-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mid);
-  }
-  .r-cadence-item .c-val {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-  }
+.r-item .r-item-note {
+font-size: 11px;
+color: var(–mid);
+display: block;
+font-weight: 300;
+margin-top: 1px;
+}
 
-  .r-footer {
-    padding: 16px 24px;
-  }
-  .r-when {
-    font-size: 12px;
-    color: var(--mid);
-    font-weight: 300;
-    line-height: 1.55;
-  }
-  .r-when strong {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    font-weight: 500;
-    margin-bottom: 3px;
-  }
+.r-cadence {
+padding: 14px 24px;
+border-bottom: 1px solid var(–border);
+display: flex;
+gap: 16px;
+}
+.r-cadence-item {
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+.r-cadence-item .c-label {
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–mid);
+}
+.r-cadence-item .c-val {
+font-size: 13px;
+font-weight: 500;
+color: var(–ink);
+}
 
-  /* TRANSITION STRIP */
-  .transition-strip {
-    margin: 0 48px 32px;
-    background: var(--ink);
-    border-radius: 14px;
-    padding: 28px 36px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 32px;
-  }
-  .transition-strip h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
-  }
-  .transition-strip p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.6;
-    font-weight: 300;
-    max-width: 600px;
-  }
-  .transition-strip .ts-badge {
-    background: var(--accent);
-    color: white;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 20px;
-    white-space: nowrap;
-    letter-spacing: 0.04em;
-  }
+.r-footer {
+padding: 16px 24px;
+}
+.r-when {
+font-size: 12px;
+color: var(–mid);
+font-weight: 300;
+line-height: 1.55;
+}
+.r-when strong {
+display: block;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–mid);
+font-weight: 500;
+margin-bottom: 3px;
+}
 
-  @media (max-width: 900px) {
-    .packages, .retainer-grid { grid-template-columns: 1fr; padding: 32px 24px 48px; }
-    .hero, .intro, .notes-bar, .retainer-section { padding-left: 24px; padding-right: 24px; }
-    .notes-columns { grid-template-columns: 1fr; }
-    .retainer-grid { margin: 0; padding-left: 0; padding-right: 0; }
-    .transition-strip { margin: 0 24px 32px; grid-template-columns: 1fr; }
-    .proposal-layout { grid-template-columns: 1fr; padding: 32px 24px 48px; }
-    .retainer-section.retainer-inline { padding: 0 0 32px; }
-  }
+/* TRANSITION STRIP */
+.transition-strip {
+margin: 0 48px 32px;
+background: var(–ink);
+border-radius: 14px;
+padding: 28px 36px;
+display: grid;
+grid-template-columns: 1fr auto;
+align-items: center;
+gap: 32px;
+}
+.transition-strip h4 {
+font-family: ‘Syne’, sans-serif;
+font-size: 16px;
+font-weight: 700;
+color: var(–white);
+margin-bottom: 6px;
+}
+.transition-strip p {
+font-size: 13px;
+color: rgba(255,255,255,0.5);
+line-height: 1.6;
+font-weight: 300;
+max-width: 600px;
+}
+.transition-strip .ts-badge {
+background: var(–accent);
+color: white;
+font-size: 11px;
+font-weight: 500;
+padding: 8px 18px;
+border-radius: 20px;
+white-space: nowrap;
+letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+.packages, .retainer-grid { grid-template-columns: 1fr; padding: 32px 24px 48px; }
+.hero, .intro, .notes-bar, .retainer-section { padding-left: 24px; padding-right: 24px; }
+.notes-columns { grid-template-columns: 1fr; }
+.retainer-grid { margin: 0; padding-left: 0; padding-right: 0; }
+.transition-strip { margin: 0 24px 32px; grid-template-columns: 1fr; }
+.proposal-layout { grid-template-columns: 1fr; padding: 32px 24px 48px; }
+.retainer-section.retainer-inline { padding: 0 0 32px; }
+}
 </style>
+
 </head>
 <body>
 
@@ -742,6 +746,7 @@
 <div class="packages">
 
   <!-- TIER 1 -->
+
   <div class="package tier-1">
     <div class="package-header">
       <h2>Foundation</h2>
@@ -754,66 +759,71 @@
         <div class="cat-label">Strategy</div>
         <div class="service-item"><span class="dot"></span><div><strong>Research &amp; Development</strong><span class="note">Read and absorb existing business literature, explore competitor landscape, draft a brand proposition framework, identify gaps in alignment.</span></div></div>
         <div class="service-item"><span class="dot"></span><div><strong>Discovery Workshop</strong><span class="note">A two hour workshop to achieve clarity on the brand proposition framework, agree category naming, confirm audience personas and resolve any questions.</span></div></div>
+        <div class="service-item"><span class="dot"></span><div><strong>Deliverables</strong><span class="note">A confident strategy deck that any writer, designer or agency can pick up and instantly understand your verbal and visual identity, including brand proposition framework, category definition, positioning statement, persona &amp; values.</span></div></div>
 
-      </div>
-      <div class="service-category">
-        <div class="cat-label">Verbal Identity & Messaging</div>
-        <div class="service-item"><span class="dot"></span><div>Strapline creation<span class="note">5 strapline options</span></div><span class="item-price">£1,000</span></div>
-        <div class="service-item"><span class="dot"></span><div>Core messaging framework<span class="note">Brand vision, mission, values, proposition and proof points</span></div><span class="item-price">£1,500</span></div>
-        <div class="service-item"><span class="dot"></span><div>LinkedIn bio &amp; company overview<span class="note">Concise summary balancing industry confidence and human touch</span></div><span class="item-price">£250</span></div>
-        <div class="service-item"><span class="dot"></span><div>Copywriting — full website<span class="note">Landing page amends, 5–6 pages of website copy</span></div><span class="item-price">£2,500</span></div>
-      </div>
-      <div class="service-category">
-        <div class="cat-label">Web</div>
-        <div class="service-item"><span class="dot"></span><div>Full website design &amp; build<span class="note">4–6 page multi-page site with UX design included</span></div><span class="item-price">£7,000 – £10,000</span></div>
-      </div>
-      <div class="service-category">
-        <div class="cat-label">Print & Digital Essentials</div>
-
-
-      </div>
-    </div>
-    <div class="package-outcome">
-      <div class="outcome-label">Why Choose Foundation?</div>
-      <div class="outcome-text">Choose this package to hit the ground running. Foundation gives you the internal and external tools you need to align your vision, stand out in a saturated space and offer confident, clarified solutions.</div>
-    </div>
-    <div class="package-footer">
-    </div>
+```
   </div>
+  <div class="service-category">
+    <div class="cat-label">Verbal Identity & Messaging</div>
+    <div class="service-item"><span class="dot"></span><div>Strapline creation<span class="note">5 strapline options</span></div><span class="item-price">£1,000</span></div>
+    <div class="service-item"><span class="dot"></span><div>Core messaging framework<span class="note">Brand vision, mission, values, proposition and proof points</span></div><span class="item-price">£1,500</span></div>
+    <div class="service-item"><span class="dot"></span><div>LinkedIn bio &amp; company overview<span class="note">Concise summary balancing industry confidence and human touch</span></div><span class="item-price">£250</span></div>
+    <div class="service-item"><span class="dot"></span><div>Copywriting — full website<span class="note">Landing page amends, 5–6 pages of website copy</span></div><span class="item-price">£2,500</span></div>
+  </div>
+  <div class="service-category">
+    <div class="cat-label">Web</div>
+    <div class="service-item"><span class="dot"></span><div>Full website design &amp; build<span class="note">4–6 page multi-page site with UX design included</span></div><span class="item-price">£7,000 – £10,000</span></div>
+  </div>
+  <div class="service-category">
+    <div class="cat-label">Print & Digital Essentials</div>
 
+
+  </div>
+</div>
+<div class="package-outcome">
+  <div class="outcome-label">Why Choose Foundation?</div>
+  <div class="outcome-text">Choose this package to hit the ground running. Foundation gives you the internal and external tools you need to align your vision, stand out in a saturated space and offer confident, clarified solutions.</div>
+</div>
+<div class="package-footer">
+</div>
+```
+
+  </div>
 
 </div>
 
-
 <!-- RETAINER SECTION -->
+
 <div class="retainer-section">
   <div class="retainer-grid">
 
-    <!-- ESSENTIAL -->
-    <div class="retainer-card r-essential">
-      <div class="r-header">
-        <div class="r-tier-tag"><span class="r-dot"></span>Essentials Retainer</div>
-        <h3>Social Kick-Starter</h3>
-        <div class="r-price-total">£2,250/mo</div>
-        <div class="r-sub">"Instant visibility and credibility on socials"</div>
-      </div>
-      <div class="r-body">
+```
+<!-- ESSENTIAL -->
+<div class="retainer-card r-essential">
+  <div class="r-header">
+    <div class="r-tier-tag"><span class="r-dot"></span>Essentials Retainer</div>
+    <h3>Social Kick-Starter</h3>
+    <div class="r-price-total">£2,250/mo</div>
+    <div class="r-sub">"Instant visibility and credibility on socials"</div>
+  </div>
+  <div class="r-body">
 
-        <div class="r-item"><span class="ri-dot"></span><div>Monthly strategy meeting<span class="r-item-note">60-minute check-in to review performance, align on upcoming content and discuss priorities</span></div><span class="r-price">£100/mo</span></div>
-        <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post writing (×4/month)<span class="r-item-note">Company page and/or founder voice; SEO optimised</span></div><span class="r-price">£1,500/mo</span></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Social post design &amp; scheduling (×4/month)<span class="r-item-note">Designed and scheduled posts to match written content</span></div><span class="r-price">£500/mo</span></div>
-        <div class="r-item"><span class="ri-dot"></span><div>1× short-form editorial piece<span class="r-item-note">300–400 words; LinkedIn article or web update</span></div><span class="r-price">Included</span></div>
-        <div class="r-item"><span class="ri-dot"></span><div>Minor website copy updates<span class="r-item-note">Up to 2 hours of amends per month</span></div><span class="r-price">£150/mo</span></div>
-      </div>
-      <div class="r-cadence">
-        <div class="r-cadence-item"><span class="c-label">Cadence</span><span class="c-val">Monthly</span></div>
-        <div class="r-cadence-item"><span class="c-label">Check-in</span><span class="c-val">30 min call</span></div>
-        <div class="r-cadence-item"><span class="c-label">Notice</span><span class="c-val">30 days</span></div>
-      </div>
-      <div class="r-footer">
-        <div class="r-when"><strong>Why Choose Social Kick-Starter?</strong>Harness the power of LinkedIn fast, with expertly crafted social posts and thought leadership articles that inspire and inform every month, while maintaining website clarity.</div>
-      </div>
-    </div>
+    <div class="r-item"><span class="ri-dot"></span><div>Monthly strategy meeting<span class="r-item-note">60-minute check-in to review performance, align on upcoming content and discuss priorities</span></div><span class="r-price">£100/mo</span></div>
+    <div class="r-item"><span class="ri-dot"></span><div>LinkedIn post writing (×4/month)<span class="r-item-note">Company page and/or founder voice; SEO optimised</span></div><span class="r-price">£1,500/mo</span></div>
+    <div class="r-item"><span class="ri-dot"></span><div>Social post design &amp; scheduling (×4/month)<span class="r-item-note">Designed and scheduled posts to match written content</span></div><span class="r-price">£500/mo</span></div>
+    <div class="r-item"><span class="ri-dot"></span><div>1× short-form editorial piece<span class="r-item-note">300–400 words; LinkedIn article or web update</span></div><span class="r-price">Included</span></div>
+    <div class="r-item"><span class="ri-dot"></span><div>Minor website copy updates<span class="r-item-note">Up to 2 hours of amends per month</span></div><span class="r-price">£150/mo</span></div>
+  </div>
+  <div class="r-cadence">
+    <div class="r-cadence-item"><span class="c-label">Cadence</span><span class="c-val">Monthly</span></div>
+    <div class="r-cadence-item"><span class="c-label">Check-in</span><span class="c-val">30 min call</span></div>
+    <div class="r-cadence-item"><span class="c-label">Notice</span><span class="c-val">30 days</span></div>
+  </div>
+  <div class="r-footer">
+    <div class="r-when"><strong>Why Choose Social Kick-Starter?</strong>Harness the power of LinkedIn fast, with expertly crafted social posts and thought leadership articles that inspire and inform every month, while maintaining website clarity.</div>
+  </div>
+</div>
+```
 
   </div>
 </div>
